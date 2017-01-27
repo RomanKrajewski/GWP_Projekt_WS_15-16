@@ -1,0 +1,297 @@
+
+*,*::before,*::after{
+    box-sizing:border-box;
+}
+body{
+    background-color:rgba(21, 128, 93,0.6);
+    background: url("../images/mainbackgroundalternative.jpg") no-repeat bottom ; /** Quelle: http://wallpaper4me.com/wallpaper/Virtual-Reality-City/ **/
+    background-attachment: fixed;
+    background-size: cover;
+    color:rgba(222,243,239,0.9);
+    width:80%;
+    min-width: 53em;
+    margin: 0px auto;
+}
+
+header{
+    color:rgba(141, 222, 200, 0.9);
+    background-color: rgba(10,10,10,0.9);
+    margin-top: 3em;
+    height: 6em;
+}
+#logo{
+    float:right;
+    margin-top: 2em;
+    margin-right: 1em;
+    max-height: 3em;
+    width: auto;
+}
+
+/*Überschriften*/
+h1 {
+    display: inline-block;
+    font-size: 3em;
+    margin-top: 2rem;
+    margin-left: 2rem;
+    margin-right: 0;
+    }
+h1>a:visited,h1>a{
+    color:rgba(120, 120, 120, 0.9);
+}
+h1>a:hover{
+    color:rgba(44, 160, 122, 0.7);
+}
+h2{
+    font-size:2em;
+    color:rgba(28, 160, 117, 0.9);
+}
+h3{
+    color:rgba(29, 113, 85, 0.9);
+}
+
+/*Formatierung der Sections*/
+section{
+    box-sizing:content-box;
+    background-color: rgba(10,10,10,0.75);
+    padding:3%;
+
+}
+
+section.vertreter img{
+    width:100%;
+}
+
+
+section.vertreter{
+    
+    background-color:rgba(0,0,0,0.5);
+    display:inline-block;
+    vertical-align:top;
+    width: 43.7%;    
+}
+
+/*Navigation*/
+nav{
+    background-color: rgba(30,30,30, 0.9);
+    margin:0;
+    padding:0;
+    margin-bottom: 2em;
+}
+nav>ul {
+    display: inline-block;
+    margin:0;
+    padding:0;
+    width:100%;  
+}
+
+nav ul li:last-child a{
+    box-sizing:content-box;
+    padding-right:12px;
+
+}
+nav li {
+    display: inline-block;
+    width:20%;
+    margin-left:-3px;
+    margin-right:-3px;
+}
+nav li a{
+    display: inline-block;
+    font-size: 1.4em;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em; 
+    width:100%;
+    color:rgba(170, 170, 170, 0.9);
+    text-align:center;
+    }
+nav li a:visited{
+    color:rgba(170, 170, 170, 0.9);
+}
+nav li a#visiting, nav li a#visiting:hover{
+    color:rgba(170,170,170,0.9);
+    background-color:rgba(21, 128, 93, 0.3);
+}
+nav li a:hover{
+    color:rgba(21, 128, 93,0.6);
+}
+
+/*Footer*/
+footer{
+    font-size: 1.1em;
+    margin-top: 1rem;
+    padding-top: 0.4em;
+    padding-right: 1em;
+    padding-left: 1em;
+    padding-bottom: 0.4em;
+    background-color:rgba(30,30,30,0.9);
+    
+}
+
+/*Links*/
+a:visited{
+    color:rgba(113, 183, 164, 0.9);
+
+    }
+a:hover{
+    color:rgba(31,161,120,0.9);
+	
+    }
+a{
+    text-decoration: none;
+    color:rgba(0, 173, 117, 0.9);
+	
+}
+
+/*Buttons für mobile Navigation ausblenden */
+.menuButtons{
+    display:none;
+}
+.menuButtons img{
+    height: 2.3em;
+    
+}
+
+/*Style Anweisungen für das Spiel */
+
+section.playersection{
+    display: inline-block;
+    width : 5em;
+    height: 5em;
+}
+
+.playersection>h4{
+    text-align: center;
+    margin-top:0;
+}
+
+p.score{
+    text-align:center;
+    margin:0;
+    font-size:200%
+}
+
+p.countdown{
+    font-size:10em;
+    position:absolute;
+    top: 50%;
+    left:50%;
+    margin:0px;
+    
+}
+#game{
+    position:relative;
+}
+
+
+/*media query für Smartphones*/
+@media screen and (max-width: 600px){
+    body{
+        min-width:100%;
+        width:100%;
+        margin:0px;
+    }
+    header{
+        margin-top:0;
+        height:3em;
+        white-space: nowrap;
+    }
+    h1{
+        font-size:2em;
+        margin:0;
+        padding:0;
+        vertical-align:middle;
+    }
+    h2{
+        padding-top:0;
+        font-size: 1.5em;
+    }
+    
+    /*Logo wird aus Platzgründen ausgeblendet*/
+    #logo{
+        display:none;
+    }
+    
+    div.menuButtons{
+        margin:0.3em;
+        display:inline-block;
+        vertical-align:middle;
+
+    }
+    
+    nav ul li{
+        width:100%;
+        display:block;
+        margin:0;
+        padding:0;
+        
+    }
+    
+    /*hideNav ist per Default ausgeblendet*/
+	/**/
+	div.menuButtons a.hideNav{
+		display:	none;
+	}
+
+    /*destop-nav ist per default ausgeblendet*/
+	/**/
+    nav{
+        padding:0;
+        margin-bottom:1em;
+        max-height: 0;
+        overflow: hidden;
+        transition:         0.3s;
+    }
+	nav ul{
+		max-height:			0;	
+		overflow:			hidden;
+        transition:         0.3s;
+		padding:			0;
+		margin:				0;
+	}
+    
+    /*nav einblenden mit :target
+	<body id="menue"> #menue wird an die url gehängt
+	==> Wenn #menue in URL, dann führe die folgenden drei Regeln aus	
+	http://blog.kulturbanause.de/2013/03/die-css-pseudoklasse-target-funktion-beispiele/
+	*/
+	/**/
+    #menue:target nav{
+        max-height: 25rem;
+    }
+	#menue:target ul{
+		max-height:	25rem;
+	}
+    
+	
+	/*Menü-Buttons wechseln mit :target
+	Springen zur id beachten! entfernen im html mit #*/
+	/**/
+	#menue:target a.showNav{
+		display:	none;
+	}
+	
+	/**/
+	#menue:target a.hideNav{
+		display:	inline-block;
+	}
+    
+    nav ul li:last-child a{
+    box-sizing:border-box;
+    }
+    
+    section{
+        padding-top:0.01em;
+    }
+    section.vertreter{
+        display:block;
+        margin-bottom: 1em;
+        width:auto;
+    }
+    section.playersection{
+        padding-top:0.5em;
+    }
+    
+    
+    
+}
+    
